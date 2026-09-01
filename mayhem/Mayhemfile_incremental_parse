@@ -1,0 +1,9 @@
+project: savantenvs/wasm-tools
+target: incremental_parse
+
+cmds:
+  - cmd: /mayhem/run
+    libfuzzer: true
+    timeout: 30
+    env:
+      FUZZER: 'incremental_parse'

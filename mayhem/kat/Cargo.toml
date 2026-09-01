@@ -1,0 +1,20 @@
+[package]
+name = "kat"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# This is a NEW, ADDITIVE crate under mayhem/ — it must declare its OWN empty [workspace] table
+# or cargo believes it's a member of the upstream root workspace (which we must never edit).
+[workspace]
+
+[[bin]]
+name = "kat"
+path = "src/main.rs"
+
+[dependencies]
+# Path deps into the upstream tree's own crates — same code the fuzz harness exercises
+# (wasmparser's validator, wat's text-format parser, wasmprinter's binary->text printer).
+wat = { path = "../../crates/wat" }
+wasmparser = { path = "../../crates/wasmparser" }
+wasmprinter = { path = "../../crates/wasmprinter" }

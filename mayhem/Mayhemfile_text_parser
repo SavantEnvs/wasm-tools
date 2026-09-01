@@ -1,0 +1,12 @@
+project: savantenvs/wasm-tools
+target: text_parser
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/text_parser/testsuite
+
+cmds:
+  - cmd: /mayhem/run
+    libfuzzer: true
+    timeout: 30
+    env:
+      FUZZER: 'text_parser'

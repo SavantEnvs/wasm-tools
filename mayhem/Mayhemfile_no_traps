@@ -1,0 +1,9 @@
+project: savantenvs/wasm-tools
+target: no_traps
+
+cmds:
+  - cmd: /mayhem/run
+    libfuzzer: true
+    timeout: 30
+    env:
+      FUZZER: 'no_traps'

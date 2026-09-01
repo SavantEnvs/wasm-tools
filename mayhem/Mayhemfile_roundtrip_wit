@@ -1,0 +1,9 @@
+project: savantenvs/wasm-tools
+target: roundtrip_wit
+
+cmds:
+  - cmd: /mayhem/run
+    libfuzzer: true
+    timeout: 30
+    env:
+      FUZZER: 'roundtrip_wit'

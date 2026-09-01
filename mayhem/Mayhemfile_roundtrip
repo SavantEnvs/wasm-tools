@@ -1,0 +1,12 @@
+project: savantenvs/wasm-tools
+target: roundtrip
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/roundtrip/testsuite
+
+cmds:
+  - cmd: /mayhem/run
+    libfuzzer: true
+    timeout: 30
+    env:
+      FUZZER: 'roundtrip'

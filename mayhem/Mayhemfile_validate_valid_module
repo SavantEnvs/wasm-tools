@@ -1,0 +1,9 @@
+project: savantenvs/wasm-tools
+target: validate_valid_module
+
+cmds:
+  - cmd: /mayhem/run
+    libfuzzer: true
+    timeout: 30
+    env:
+      FUZZER: 'validate_valid_module'

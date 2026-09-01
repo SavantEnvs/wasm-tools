@@ -1,0 +1,9 @@
+project: savantenvs/wasm-tools
+target: wit64
+
+cmds:
+  - cmd: /mayhem/run
+    libfuzzer: true
+    timeout: 30
+    env:
+      FUZZER: 'wit64'

@@ -1,0 +1,8 @@
+# seed-from: https://app.mayhem.security/savantenvs/wasm-tools/validate
+project: savantenvs/wasm-tools
+target: validate-mined-b19ce51
+
+cmds:
+  - cmd: /mayhem/validate
+    libfuzzer: true
+    timeout: 30

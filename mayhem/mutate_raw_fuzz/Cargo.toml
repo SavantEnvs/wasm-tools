@@ -1,0 +1,22 @@
+[package]
+name = "mutate-raw-fuzz"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[package.metadata]
+cargo-fuzz = true
+
+# Own workspace table: this crate lives under mayhem/ and must not join upstream's root workspace.
+[workspace]
+
+[dependencies]
+libfuzzer-sys = "0.4"
+wasm-mutate = { path = "../../crates/wasm-mutate" }
+
+[[bin]]
+name = "mutate_raw"
+path = "fuzz_targets/mutate_raw.rs"
+test = false
+doctest = false
+bench = false

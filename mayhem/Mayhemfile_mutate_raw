@@ -1,0 +1,10 @@
+project: savantenvs/wasm-tools
+target: mutate_raw-mined-3226b14
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/mutate_raw-mined-3226b14/testsuite
+
+cmds:
+  - cmd: /mayhem/mutate_raw
+    libfuzzer: true
+    timeout: 30
